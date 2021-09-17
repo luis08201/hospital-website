@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;900&family=Poppins:wght@300;400;500;700&display=swap');
+
+
+$graycolor:#F5F5F5;
+$whitecolor:#FFFFFF;
+$greencolor:#16A085;
+$blackcolor:#444444;
+$darkgraycolor:#999999;
+ $primary-family: 'Nunito', sans-serif;
+    $secondary__font: 'Poppins', sans-serif;
+%margenes{
+    max-width:1183px;
+    margin:0 auto;
+}
+
+/* BOTONES */
+%btn{
+    width: 160px;
+    height: 45px;
+    padding:0 5px;
+    border: 3px solid $greencolor;
+    background-color: $whitecolor;
+    color: $greencolor;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 4px 12px #4444444b;
+    transition: width 0.5s 0s ease;
+    cursor: pointer;
+    &:hover{
+      border: 3px solid $greencolor;
+      background-color: $greencolor;
+      color: $whitecolor;
+      cursor: pointer;
+      width: 170px;
+    }
+    &:hover %arrowRight{
+      background-color: $whitecolor;
+      color: $greencolor;  
+    }
+}
+
+
+%arrowRight{
+    padding: 6px 12px;
+    background-color: $greencolor;
+    color: $whitecolor;
+    border-radius: 5px;
+}

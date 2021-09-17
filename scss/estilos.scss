@@ -1,0 +1,992 @@
+@import "resource";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: $secondary__font;
+  font-size: 16px;
+  padding: 0.1px;
+}
+button,
+input {
+  font-family: $secondary__font;
+  font-size: 16px;
+}
+.header {
+  background-color: $whitecolor;
+  box-shadow: 0 0 12px #4444444b;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  position: fixed;
+  padding: 32.99px 40px;
+  transition: padding 0.7s 0s ease;
+  &.sticky{
+    padding: 12.99px 40px;
+  }
+  &__menuToggle {
+    display: none;
+  }
+
+  &__subheader {
+    @extend %margenes;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__ico {
+    padding-right: 7px;
+    color: $greencolor;
+  }
+  &__link {
+    text-decoration: none;
+    color: $darkgraycolor;
+    font-size: 24px;
+    transition: color 0.5s 0s ease;
+    &:hover {
+      cursor: pointer;
+      color: $greencolor;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 23.48px;
+  }
+  &__nav--link {
+    text-decoration: none;
+    color: $darkgraycolor;
+    font-size: 18px;
+    transition: color 0.5s 0s ease;
+    &:hover {
+      cursor: pointer;
+      color: $greencolor;
+    }
+  }
+}
+.container {
+  margin-top: 100px;
+
+  &__banner {
+    background-color: $graycolor;
+  }
+  &__services {
+    background-color: $graycolor;
+    padding: 37px 0 19px;
+  }
+  &__about {
+    padding: 37px 0 19px;
+  }
+  &__doctors {
+    background-color: $graycolor;
+    padding: 37px 0 19px;
+  }
+  &__book {
+    padding: 37px 0 19px;
+  }
+  &__clients {
+    background-color: $graycolor;
+    padding: 37px 0 19px;
+  }
+  &__blogs {
+    padding: 37px 0 19px;
+  }
+}
+
+/* BANNER */
+.banner {
+  &__bigbox {
+    max-width: 1042px;
+    margin: 0 auto;
+    padding: 55px 0 99px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__picture {
+    width: 48%;
+  }
+  &__description {
+    width: 48%;
+  }
+  &__heading {
+    font-size: 38px;
+    font-weight: 700;
+    text-shadow: 3.5px 3.5px 0 #999999;
+  }
+  &__paragraph {
+    margin-top: 31px;
+    margin-bottom: 27px;
+    color: $darkgraycolor;
+  }
+  &__img {
+    width: 100%;
+  }
+  &__ico {
+    @extend %arrowRight;
+  }
+  &__btn {
+    @extend %btn;
+  }
+}
+/* FEEDBACK */
+.feedback {
+  &__bigbox {
+    @extend %margenes;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    padding: 50px 0;
+    width: 90%;
+  }
+  &__box {
+    border: 2px solid $greencolor;
+    border-radius: 8px;
+    box-shadow: 4px 4px 3px #16a0843d;
+    text-align: center;
+    padding: 30px 0;
+  }
+  &__ico {
+    font-size: 32px;
+    color: $greencolor;
+  }
+  &__secondheading {
+    font-size: 36px;
+    color: $blackcolor;
+    text-shadow: 4px 4px 2px $darkgraycolor;
+  }
+  &__paragraph {
+    color: $blackcolor;
+  }
+}
+/* SERVICES */
+.services {
+  &__mainheading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 42px;
+    text-shadow: 3.5px 3.5px 0 #999999;
+    margin-bottom: 36px;
+  }
+  &__span {
+    color: $greencolor;
+  }
+  &__bigbox {
+    @extend %margenes;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "services__checkups services__ambulance services__doctors services__medicines"
+      "services__bed services__totalCare . .";
+    row-gap: 20px;
+    column-gap: 20px;
+  }
+  &__box {
+    border: 3px solid $greencolor;
+    background-color: $whitecolor;
+    padding: 28px 23px;
+    box-shadow: 0 4px 12px #4444444b;
+    border-radius: 8px;
+  }
+  &__checkups {
+    grid-area: services__checkups;
+  }
+  &__ambulance {
+    grid-area: services__ambulance;
+  }
+  &__doctors {
+    grid-area: services__doctors;
+  }
+  &__medicines {
+    grid-area: services__medicines;
+  }
+  &__bed {
+    grid-area: services__bed;
+  }
+  &__totalCare {
+    grid-area: services__totalCare;
+  }
+
+  &__secondheading {
+    margin: 12px 0 22px;
+    color: $blackcolor;
+  }
+  &__paragraph {
+    margin-bottom: 22px;
+    color: $darkgraycolor;
+  }
+  &__ico {
+    @extend %arrowRight;
+  }
+  &__btn {
+    @extend %btn;
+  }
+}
+/* ABOUT */
+.about {
+  &__mainheading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 42px;
+    text-shadow: 3.5px 3.5px 0 #999999;
+    margin-bottom: 36px;
+  }
+  &__span {
+    color: $greencolor;
+  }
+  &__bigbox {
+    max-width: 1042px;
+    margin: 0 auto;
+    padding: 55px 0 99px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__secondheading {
+    font-size: 38px;
+    font-weight: 700;
+    text-shadow: 3.5px 3.5px 0 #999999;
+  }
+  &__paragraph {
+    margin-top: 31px;
+    margin-bottom: 27px;
+    color: $darkgraycolor;
+  }
+  &__ico {
+    @extend %arrowRight;
+  }
+  &__btn {
+    @extend %btn;
+  }
+  &__picture {
+    width: 48%;
+  }
+  &__description {
+    width: 48%;
+  }
+  &__img {
+    width: 100%;
+  }
+}
+/* DOCTORS */
+.doctors {
+  &__mainheading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 42px;
+    text-shadow: 3.5px 3.5px 0 #999999;
+    margin-bottom: 36px;
+  }
+  &__span {
+    color: $greencolor;
+  }
+  &__bigbox {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    justify-items: center;
+    grid-row-gap: 20px;
+    width: 100%;
+  }
+  &__box {
+    border: 3px solid $greencolor;
+    background-color: $whitecolor;
+    padding: 28px 23px;
+    box-shadow: 0 4px 12px #4444444b;
+    border-radius: 8px;
+    text-align: center;
+    width: 90%;
+  }
+  &__img {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    border: 3px solid $greencolor;
+  }
+  &__middleheading {
+    color: $blackcolor;
+    margin-bottom: 16pxpx;
+    margin-top: 23px;
+    font-size: 32px;
+  }
+  &__paragraph {
+    margin-bottom: 26px;
+    color: $greencolor;
+  }
+  &__socialnetwork {
+    display: flex;
+    justify-content: center;
+    gap: 11px;
+  }
+  &__scn {
+    text-decoration: none;
+    color: $greencolor;
+    padding: 15px 20px;
+    font-size: 24px;
+    border: 1px solid $greencolor;
+    border-radius: 8px;
+    transition: background-color 0.5s 0s ease;
+    &:hover {
+      background-color: $greencolor;
+      color: $whitecolor;
+      box-shadow: 6px 6px 1px #99999977;
+    }
+  }
+}
+/* BOOK */
+.book {
+  &__mainheading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 42px;
+    text-shadow: 3.5px 3.5px 0 #999999;
+    margin-bottom: 36px;
+  }
+  &__span {
+    color: $greencolor;
+  }
+  &__bigbox {
+    max-width: 1042px;
+    margin: 0 auto;
+    padding: 55px 0 99px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__picture {
+    width: 48%;
+  }
+  &__form {
+    width: 48%;
+    border: 2px solid $greencolor;
+    border-radius: 8px;
+    padding: 21px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: 4px 4px 3px #16a0843d;
+  }
+  &__form--heading {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: $blackcolor;
+  }
+  &__img {
+    width: 100%;
+  }
+  &__form-- {
+    width: 100%;
+  }
+  &__form--input {
+    width: 100%;
+    padding: 18px 11px;
+    border: 3px solid $greencolor;
+    border-radius: 5px;
+    &:focus {
+      outline: none;
+    }
+  }
+  &__form--btn {
+    width: 164px;
+    height: 49px;
+    border: 1px solid $greencolor;
+    background-color: $whitecolor;
+    color: $greencolor;
+    box-shadow: 4px 4px 3px #16a0843d;
+    transition: background-color 0.5s 0s ease;
+    &:hover {
+      background-color: $greencolor;
+      color: $whitecolor;
+      cursor: pointer;
+    }
+  }
+}
+/* CLIENTS */
+.clients {
+  &__mainheading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 42px;
+    text-shadow: 3.5px 3.5px 0 #999999;
+    margin-bottom: 36px;
+  }
+  &__span {
+    color: $greencolor;
+  }
+  &__bigbox {
+    @extend %margenes;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "clients__one clients__two clients__three";
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    width: 90%;
+  }
+  &__box {
+    border: 3px solid $greencolor;
+    background-color: $whitecolor;
+    box-shadow: 0 4px 12px #16a08448;
+    border-radius: 8px;
+    text-align: center;
+  }
+  &__one {
+    grid-area: clients__one;
+  }
+  &__two {
+    grid-area: clients__two;
+  }
+  &__three {
+    grid-area: clients__three;
+  }
+  &__img {
+    width: 108px;
+    height: 108px;
+    border-radius: 50%;
+    border: 4px solid $whitecolor;
+  }
+  &__picture {
+    background-color: $greencolor;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    padding: 28px 23px;
+    color: $whitecolor;
+  }
+  &__description {
+    padding: 28px 23px;
+    color: $blackcolor;
+  }
+}
+/* BLOGS */
+.blogs {
+  &__mainheading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 42px;
+    text-shadow: 3.5px 3.5px 0 #999999;
+    margin-bottom: 36px;
+  }
+  &__span {
+    color: $greencolor;
+  }
+  &__bigbox {
+    @extend %margenes;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "blog__one blog__two blog__three";
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    width: 90%;
+  }
+  &__box {
+    border: 3px solid $greencolor;
+    border-radius: 8px;
+    box-shadow: 4px 4px 3px #16a0843d;
+    padding: 20px;
+  }
+  &__one {
+    grid-area: blog__one;
+  }
+  &__two {
+    grid-area: blog__two;
+  }
+  &__three {
+    grid-area: blog__three;
+  }
+  &__picture {
+    overflow: hidden;
+    height: 230px;
+  }
+  &__img {
+    width: 100%;
+    height: 230px;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__picture--description {
+    display: flex;
+    justify-content: space-between;
+    margin: 22px 0;
+  }
+  &__date {
+    text-decoration: none;
+    color: $blackcolor;
+  }
+  &__author {
+    text-decoration: none;
+    color: $blackcolor;
+  }
+  &__picture--ico {
+    color: $greencolor;
+    padding-right: 8px;
+  }
+  &__middleheading {
+    font-size: 32px;
+    color: $blackcolor;
+  }
+  &__paragraph {
+    margin: 22px 0;
+    color: $blackcolor;
+  }
+  &__btn {
+    @extend %btn;
+  }
+  &__ico {
+    @extend %arrowRight;
+  }
+}
+/* FOOTER */
+.footer {
+  background-color: $graycolor;
+  padding: 37px 0 19px;
+  display:flex;
+  flex-direction: column;
+  width:100%;
+  gap:20px;
+  &__credits{
+    text-align: center;
+  }
+  &__credits--link{
+    text-decoration: none;
+    color: $blackcolor;
+    transition: color 0.5s 0s ease;
+    &:hover {
+      color: $greencolor;
+    }
+  }
+  &__bigbox {
+    max-width: 1224px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "footer__quicklinks footer__services footer__contact footer__follow";
+    grid-row-gap: 20px;
+    grid-column-gap: 30px;
+    width:90%;
+  }
+  &__quicklinks {
+    grid-area: footer__quicklinks;
+  }
+  &__services {
+    grid-area: footer__services;
+  }
+  &__contact {
+    grid-area: footer__contact;
+  }
+  &__follow {
+    grid-area: footer__follow;
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 27px;
+  }
+  &__link {
+    text-decoration: none;
+    color: $blackcolor;
+    &:hover {
+      color: $greencolor;
+    }
+  }
+  &__link .footer__ico {
+    color: $greencolor;
+    padding-right: 8px;
+    transition: padding-right 0.5s 0s ease;
+  }
+  &__link:hover .footer__ico {
+    padding-right: 34px;
+  }
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1024px) {
+  /* SERVICES */
+  .services {
+    &__bigbox {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+      grid-template-areas:
+        "services__checkups services__ambulance services__doctors"
+        "services__medicines services__bed services__totalCare";
+      grid-row-gap: 20px;
+      grid-column-gap: 20px;
+    }
+
+    &__checkups {
+      grid-area: services__checkups;
+    }
+    &__ambulance {
+      grid-area: services__ambulance;
+    }
+    &__doctors {
+      grid-area: services__doctors;
+    }
+    &__medicines {
+      grid-area: services__medicines;
+    }
+    &__bed {
+      grid-area: services__bed;
+    }
+    &__totalCare {
+      grid-area: services__totalCare;
+    }
+  }
+  /* BLOGS */
+  .blogs {
+    &__bigbox {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "blog__one blog__two "
+        "blog__three . ";
+      grid-row-gap: 20px;
+      grid-column-gap: 20px;
+      width: 90%;
+    }
+    &__box {
+      border: 3px solid $greencolor;
+      border-radius: 8px;
+      box-shadow: 4px 4px 3px #16a0843d;
+      padding: 20px;
+    }
+    &__one {
+      grid-area: blog__one;
+    }
+    &__two {
+      grid-area: blog__two;
+    }
+    &__three {
+      grid-area: blog__three;
+    }
+  }
+  /* CLIENTS */
+  .clients {
+    &__bigbox {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "clients__one clients__two"
+        "clients__three . ";
+      grid-row-gap: 20px;
+      grid-column-gap: 20px;
+      width: 90%;
+    }
+    &__one {
+      grid-area: clients__one;
+    }
+    &__two {
+      grid-area: clients__two;
+    }
+    &__three {
+      grid-area: clients__three;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  /* HEADER */
+  .header {
+    &__nav {
+      position: absolute;
+      top: 130px;
+      right: 15px;
+      flex-direction: column;
+      background-color: $whitecolor;
+      width: 40%;
+      border: 3px solid $greencolor;
+      border-radius: 8px;
+      padding: 24px;
+      opacity: 0;
+      transform: scale(0);
+      transition: opacity 0.5s 0s ease-in-out, transform 0.5s 0s ease-in-out , top 0.5s 0s ease-in-out;
+      &.moveMenu{
+        top: 80px;
+      }
+      &.active {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    &__menuToggle {
+      display: block;
+      background-color:#F5F5F5;
+      background-image: url(../img/bars-solid.svg);
+      background-repeat: no-repeat;
+      background-size: 15px;
+      background-position:center;
+      padding:20px;
+      border-radius:8px;
+      cursor: pointer;
+      &.active{
+        background-image: url(../img/times-solid.svg);
+      }
+    }
+  }
+  /* SERVICES */
+  .services {
+    &__bigbox {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+      grid-template-areas:
+        "services__checkups services__ambulance"
+        "services__doctors services__medicines"
+        "services__bed services__totalCare";
+      grid-row-gap: 20px;
+      grid-column-gap: 20px;
+    }
+
+    &__checkups {
+      grid-area: services__checkups;
+    }
+    &__ambulance {
+      grid-area: services__ambulance;
+    }
+    &__doctors {
+      grid-area: services__doctors;
+    }
+    &__medicines {
+      grid-area: services__medicines;
+    }
+    &__bed {
+      grid-area: services__bed;
+    }
+    &__totalCare {
+      grid-area: services__totalCare;
+    }
+  }
+  /* ABOUT */
+  .about {
+    &__bigbox {
+      flex-direction: column;
+      padding: 55px 20px 99px;
+    }
+    &__picture {
+      width: 100%;
+    }
+    &__description {
+      width: 100%;
+    }
+  }
+  /* BLOGS */
+  .blogs {
+    &__bigbox {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-areas:
+        "blog__one"
+        "blog__two"
+        "blog__three";
+      grid-row-gap: 20px;
+      grid-column-gap: 20px;
+      width: 90%;
+    }
+    &__one {
+      grid-area: blog__one;
+    }
+    &__two {
+      grid-area: blog__two;
+    }
+    &__three {
+      grid-area: blog__three;
+    }
+    &__img {
+      height: 100%;
+      border-radius: 8px;
+      transition: transform 0.5s ease;
+      object-fit: cover;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+  /* BOOK */
+  .book {
+    &__bigbox {
+      flex-direction: column;
+    }
+    &__picture {
+      width: 100%;
+    }
+    &__form {
+      width: 90%;
+    }
+    &__form--btn {
+      width: 100%;
+    }
+  }
+  /* FOOTER */
+  .footer {
+    &__bigbox {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "footer__quicklinks footer__services"
+        "footer__contact footer__follow";
+    }
+    &__quicklinks {
+      grid-area: footer__quicklinks;
+    }
+    &__services {
+      grid-area: footer__services;
+    }
+    &__contact {
+      grid-area: footer__contact;
+    }
+    &__follow {
+      grid-area: footer__follow;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+    /* HEADER */
+  .header {
+    &__nav {
+      width: 80%;
+    }    
+  }
+  /* BANNER */
+  .banner {
+    &__bigbox {
+      padding: 55px 20px 99px;
+      flex-direction: column;
+    }
+    &__picture {
+      width: 100%;
+    }
+    &__description {
+      width: 100%;
+    }
+  }
+  /* SERVICES */
+  .services {
+    &__bigbox {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      justify-items: center;
+      grid-template-areas:
+        "services__checkups"
+        "services__ambulance"
+        "services__doctors"
+        "services__medicines"
+        "services__bed"
+        "services__totalCare";
+      grid-row-gap: 20px;
+      grid-column-gap: 20px;
+      width: 90%;
+    }
+
+    &__checkups {
+      grid-area: services__checkups;
+    }
+    &__ambulance {
+      grid-area: services__ambulance;
+    }
+    &__doctors {
+      grid-area: services__doctors;
+    }
+    &__medicines {
+      grid-area: services__medicines;
+    }
+    &__bed {
+      grid-area: services__bed;
+    }
+    &__totalCare {
+      grid-area: services__totalCare;
+    }
+  }
+  /* CLIENTS */
+  .clients {
+    &__bigbox {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-areas:
+        "clients__one "
+        "clients__two"
+        "clients__three";
+      grid-row-gap: 20px;
+      grid-column-gap: 20px;
+      width: 90%;
+    }
+    &__one {
+      grid-area: clients__one;
+    }
+    &__two {
+      grid-area: clients__two;
+    }
+    &__three {
+      grid-area: clients__three;
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  /* FEEDBACK */
+  .feedback {
+    &__bigbox {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+      padding: 50px 0;
+      width: 90%;
+    }
+    &__box {
+      border: 2px solid $greencolor;
+      border-radius: 8px;
+      box-shadow: 4px 4px 3px #16a0843d;
+      text-align: center;
+      padding: 30px 0;
+    }
+  }
+  .doctors {
+    &__bigbox {
+      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
+    &__box {
+      width: 95%;
+    }
+  }
+  /* FOOTER */
+  .footer {
+    &__bigbox {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "footer__quicklinks footer__quicklinks"
+        "footer__services footer__services"
+        "footer__contact footer__contact"
+        "footer__follow footer__follow";
+    }
+    &__quicklinks {
+      grid-area: footer__quicklinks;
+    }
+    &__services {
+      grid-area: footer__services;
+    }
+    &__contact {
+      grid-area: footer__contact;
+    }
+    &__follow {
+      grid-area: footer__follow;
+    }
+  }
+}
+@media screen and (max-width: 280px) {
+  .doctors {
+    &__scn {
+      padding: 10px;
+      font-size: 18px;
+    }
+  }
+}
