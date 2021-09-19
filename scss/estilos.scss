@@ -708,6 +708,8 @@ input {
       border-radius: 8px;
       padding: 24px;
       opacity: 0;
+      overflow:scroll;
+      height:300px;
       transform: scale(0);
       transition: opacity 0.5s 0s ease-in-out, transform 0.5s 0s ease-in-out , top 0.5s 0s ease-in-out;
       &.moveMenu{
